@@ -5,10 +5,19 @@
     width: 100%;
     z-index: 999;
     .container{
-        border: 2px solid #d9d9d9;
-        border-radius: 50px;
-        padding: 10px 30px;
-        backdrop-filter: blur(5px);
+        .outer{
+            border: 2px solid #d9d9d9;
+            border-radius: 50px;
+            padding: 10px 30px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            -moz-backdrop-filter: blur(5px);
+            -o-backdrop-filter: blur(5px);
+            -ms-backdrop-filter: blur(5px);
+
+
+
+        }
     }
     .logo{
         display: inline-block;
