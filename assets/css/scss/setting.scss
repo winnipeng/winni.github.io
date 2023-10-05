@@ -1,0 +1,139 @@
+$pink: #FFF3F3;
+$bg-gray: #F4F4F4;
+$box-shadow: 0px 2px 30px rgba(73, 52, 52, 0.04);
+
+$device: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+body{
+  background-color: #f5f5f5;
+}
+
+@function device($name) {
+  @return map-get($device, $name);
+}
+@mixin res($selected, $mode: to-pc) {
+  @if $mode == to-pc {
+    @media all and (min-width: device($selected)) {
+      @content;
+    }
+  }
+  @if $mode == to-mb {
+    $size: device($selected) - 1px;
+    @media all and (max-width: $size) {
+      @content;
+    }
+  }
+}
+.bg-gray{
+  background-color: $bg-gray;
+}
+
+
+section{
+  padding: 60px 0;
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    // padding: 0 10px;
+  
+    // row, col 的 gutters
+    // .row:not(.no-gutters){
+    //   margin-left: -10px;
+    //   margin-right: -10px;
+    // }
+    // div[class^='col-']{
+    //   padding-left: 10px;
+    //   padding-right: 10px;
+    // }
+  
+    // padding: 0 25px; // 手機版增加左右的安全間距
+    // @include res(phone) {
+    //   padding: 0 15px; // 其他沿用 boootstrap 預設的安全間距
+    // }
+  
+    // @include res(sm) {
+    //   max-width: 700px;
+    // }
+    // @include res(md) {
+    //   max-width: 900px;
+    // }
+    // @include res(lg) {
+    //   max-width: 1120px;
+    // }
+    @include res(xl) {
+      max-width: 1184px;
+    }
+  }
+#load{
+    background-color: white;
+    width:100%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transition: all .3s ease-in-out;
+    .element{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 60px;
+        .title{
+          text-align: center;
+          line-height: 75px;
+          margin-bottom: 80px;
+          span{
+            display: inline-block;
+            transform: rotateY(360deg);
+            transition: .3s all ease-in-out;
+            animation-name: A-rotate;
+            animation-duration:2s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            $max: 14;
+            @for $i from 1 through $max {
+              &.span-#{$i} {
+                  animation-delay: ($i)*0.15s;
+              }
+            }
+          }
+        }
+    }
+    &.is-loading{
+        opacity:1;
+        
+    }
+}
+
+
+@keyframes A-rotate{
+    from{
+        opacity: 0;
+        transform: rotateY(0deg) rotateX(5deg) translateY(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: rotateY(360deg) rotateX(5deg) translateY(0px);
+    }
+}
+body{
+    line-height: 1.8;
+    color: #584c52;
+    font-family: "Work Sans","Noto Sans TC",sans-serif;
+    img{
+      max-width: 100%;
+    }
+    p{
+      
+    }
+}
+

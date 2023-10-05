@@ -1,0 +1,87 @@
+.banner{
+    img{
+        max-width: 100%;
+    }
+}
+.main{    
+    margin: 80px 0;
+    .card-1{
+        p{
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        cursor: pointer;
+        padding-bottom: 80px;
+        transition: all .3s ease-in-out;
+        .img{
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            border: unset;
+            margin-bottom: 10px;
+        }
+        img{
+            z-index: 10;
+            position: relative;
+        }
+
+        .color-bg{
+            display: block;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+
+
+
+            -webkit-transition: .3s -webkit-filter linear;
+            -moz-transition: .3s -moz-filter linear;
+            -moz-transition: .3s filter linear;
+            -ms-transition: .3s -ms-filter linear;
+            -o-transition: .3s -o-filter linear;
+            transition: .3s filter linear, .3s -webkit-filter linear;
+        }
+        &:hover{
+            p{
+                color: rgb(14, 14, 14);
+                
+            }
+            transform: translateY(-20px);
+            // box-shadow: 0px 2px 50px rgb(58 34 34 / 10%);
+            .color-bg{
+                -webkit-filter: brightness(0.93) saturate(5);
+                -moz-filter: brightness(0.93) saturate(5);
+                -moz-filter: brightness(0.93) saturate(5);
+                -ms-filter: brightness(0.93) saturate(5);
+                -o-filter: brightness(0.93) saturate(5);
+                filter: brightness(0.93) saturate(5);
+
+            }
+        }
+    }
+}
+h3{
+    font-size: 20px;
+    font-weight: 300;
+    color: #584C52;
+}
+
+.ml13 {
+    font-family: 'Gochi Hand', cursive;
+    font-size: 70px;
+    position: relative;
+    color: #584C52;
+    z-index: -99;
+  }
+  
+.ml13 .letter {
+    display: inline-block;
+    height: 70px;
+    svg{
+        position: relative;
+        top: -3px;
+    }
+}
