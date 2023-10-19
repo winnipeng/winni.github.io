@@ -14,9 +14,17 @@
             -moz-backdrop-filter: blur(5px);
             -o-backdrop-filter: blur(5px);
             -ms-backdrop-filter: blur(5px);
-
-
-
+            a:hover{
+                color: #000;
+            }
+        }
+        .outer-b{
+            border: 2px solid #d9d9d945;
+            background-color: #0000007d;
+            color: rgb(226, 226, 226);
+            a:hover{
+                color: white;
+            }
         }
     }
     .logo{

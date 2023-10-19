@@ -72,6 +72,12 @@ section{
       max-width: 1184px;
     }
   }
+.container-l{
+  @include res(xl) {
+    max-width: 1440px;
+  }
+
+}
 #load{
     background-color: white;
     width:100%;
